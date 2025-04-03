@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckq7ilx7ic1q6" path="res://scenes/objects/plants/tomato.tscn" id="6_s5uu4"]
 
 [node name="TestSceneCrops" type="Node2D"]
+y_sort_enabled = true
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_17gaa")]
 visible = false

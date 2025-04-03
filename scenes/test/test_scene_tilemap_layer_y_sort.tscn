@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=4 uid="uid://dntgeg645njgd"]
+[gd_scene load_steps=6 format=4 uid="uid://dntgeg645njgd"]
 
 [ext_resource type="TileSet" uid="uid://bui5t0akjbf5w" path="res://Tilesets/game_tile_set.tres" id="1_ctmx0"]
+[ext_resource type="PackedScene" uid="uid://ckq7ilx7ic1q6" path="res://scenes/objects/plants/tomato.tscn" id="2_5mdqj"]
 [ext_resource type="PackedScene" uid="uid://d36rwti00tix5" path="res://scenes/characters/player/player.tscn" id="2_ph1je"]
+[ext_resource type="PackedScene" uid="uid://cgcbxl7ihej1x" path="res://scenes/objects/plants/corn.tscn" id="3_vkqnv"]
+[ext_resource type="PackedScene" uid="uid://cx2pciacx8kh" path="res://scenes/ui/game_screen.tscn" id="5_vkqnv"]
 
 [node name="TestSceneTilemapLayerYSort" type="Node2D"]
 y_sort_enabled = true
@@ -35,3 +38,20 @@ tile_set = ExtResource("1_ctmx0")
 position = Vector2(149, 198)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Crops" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tomato" parent="Crops" instance=ExtResource("2_5mdqj")]
+position = Vector2(132, 174)
+
+[node name="Corn" parent="Crops" instance=ExtResource("3_vkqnv")]
+position = Vector2(168, 167)
+
+[node name="Corn2" parent="Crops" instance=ExtResource("3_vkqnv")]
+position = Vector2(168, 148)
+
+[node name="Tomato2" parent="Crops" instance=ExtResource("2_5mdqj")]
+position = Vector2(133, 159)
+
+[node name="GameScreen" parent="." instance=ExtResource("5_vkqnv")]
