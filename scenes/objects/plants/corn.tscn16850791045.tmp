@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bitqs68pniqh4" path="res://scenes/objects/plants/watering_particles.tscn" id="2_ofjf8"]
 [ext_resource type="PackedScene" uid="uid://b052kqtl1h4fa" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_ofjf8"]
 [ext_resource type="PackedScene" uid="uid://bcxwk5gxb5870" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_q3ekf"]
-[ext_resource type="PackedScene" uid="uid://ctyvcy3axbmb" path="res://scenes/components/save_data_component.tscn" id="7_q3ekf"]
-[ext_resource type="Resource" uid="uid://cbduvl6w8qkn5" path="res://resources/scene_data_resource.tres" id="8_310os"]
+[ext_resource type="PackedScene" uid="uid://c5e346oyvysv1" path="res://scenes/components/save_data_component.tscn" id="7_q3ekf"]
+[ext_resource type="Resource" uid="uid://dfocw74pkews1" path="res://resources/scene_data_resource.tres" id="8_310os"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ucl7"]
 size = Vector2(13.5, 8)
