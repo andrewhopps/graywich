@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://5snhdo1egq2t"]
+[gd_scene load_steps=15 format=4 uid="uid://5snhdo1egq2t"]
 
 [ext_resource type="PackedScene" uid="uid://dlb05xvmchiw" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="PackedScene" uid="uid://d0j848catnoim" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="1_nk4dp"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bdxfh4dklb1a7" path="res://resources/tilemap_layer_data_resource.tres" id="7_t4lsr"]
 [ext_resource type="PackedScene" uid="uid://c5s386qgbyd12" path="res://scenes/components/save_level_data_component.tscn" id="9_w2jyg"]
 [ext_resource type="Script" uid="uid://2ir2oei8k7r0" path="res://scenes/components/save_level_data_component.gd" id="10_nk4dp"]
+[ext_resource type="PackedScene" uid="uid://v3qign7cjx55" path="res://scenes/characters/guide/guide.tscn" id="14_t4lsr"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
 y_sort_enabled = true
@@ -57,3 +58,6 @@ position = Vector2(328, 186)
 current_tool = 3
 
 [node name="GameScreen" parent="." instance=ExtResource("4_bb1mf")]
+
+[node name="Guide" parent="." instance=ExtResource("14_t4lsr")]
+position = Vector2(214, 187)

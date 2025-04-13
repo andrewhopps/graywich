@@ -1,0 +1,9 @@
+~ start
+Nathan: [[Hi|Hello|Howdy]], nice to meet you.
+Nathan: Welcome to your new farm.
+Nathan: As you can see the cows and chickens are hungry.
+Nathan: You need to grow some crops to feed them.
+Nathan: Here are some seeds to grow some crops.
+do GameDialogueManager.action_give_crop_seeds()
+
+=> END
