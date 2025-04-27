@@ -4,6 +4,9 @@ Nathan: Welcome to your new farm.
 Nathan: As you can see the cows and chickens are hungry.
 Nathan: You need to grow some crops to feed them.
 Nathan: Here are some seeds to grow some crops.
-do GameDialogueManager.action_give_crop_seeds()
-
+- Take crop seeds
+	Player: Thanks for the jump start.
+	do GameDialogueManager.action_give_crop_seeds()
+- Don't take the seeds
+	Player: I'm not ready to start farming yet.
 => END
