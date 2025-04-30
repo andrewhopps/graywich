@@ -25,6 +25,7 @@ func _ready() -> void:
 	interactable_label_component.hide()
 	
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals)
+	feed_component.food_received.connect(on_food_received)
 	
 func on_interactable_activated() -> void:
 	interactable_label_component.show()
@@ -53,6 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func on_feed_the_animals() -> void:
 	if in_range:
 		trigger_feed_harvest("corn", corn_harvest_scene)
+		trigger_feed_harvest("tomato", tomato_harvest_scene)
 		
 func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
 	var inventory: Dictionary = InventoryManager.inventory
@@ -77,3 +79,25 @@ func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
 		tween.tween_callback(harvest_instance.queue_free)
 
 		InventoryManager.remove_collectable(inventory_item)
+
+func on_food_received(area: Area2D) -> void:
+	call_deferred("add_reward_scene")
+	
+func add_reward_scene() -> void:
+	for scene in output_reward_scenes:
+		var reward_scene: Node2D = scene.instantiate()
+		# Calculate random position for reward
+		var reward_position: Vector2 = get_random_position_in_circle(reward_marker.global_position, reward_output_radius)
+		reward_scene.global_position = reward_position
+		get_tree().root.add_child(reward_scene)
+
+func get_random_position_in_circle(center: Vector2, radius: int) -> Vector2i:
+	var angle = randf() * TAU
+	
+	var distance_from_center = sqrt(randf()) * radius
+	
+	var x: int = center.x + distance_from_center * cos(angle)
+	var y: int = center.y + distance_from_center * cos(angle)
+	
+	return Vector2i(x,y)
+	

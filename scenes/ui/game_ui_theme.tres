@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=38 format=3 uid="uid://bpcud1jixkkkc"]
+[gd_resource type="Theme" load_steps=47 format=3 uid="uid://bpcud1jixkkkc"]
 
 [ext_resource type="Texture2D" uid="uid://c4l8vpg4wis7o" path="res://assets/ui/basic_ui_sprites.png" id="1_nhbk8"]
 [ext_resource type="FontVariation" uid="uid://brs8bln4vy41c" path="res://assets/ui/fonts/zx_palm_variation.tres" id="2_68i34"]
@@ -93,6 +93,58 @@ texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 3.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w57q2"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2isuy"]
+texture = SubResource("CompressedTexture2D_w57q2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(11, 11, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_owel7"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivv52"]
+texture = SubResource("CompressedTexture2D_owel7")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x862q"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyedh"]
+texture = SubResource("CompressedTexture2D_x862q")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfc43"]
+texture = ExtResource("1_nhbk8")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pqxaa"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ba0tq"]
+texture = SubResource("CompressedTexture2D_pqxaa")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(11, 107, 26, 28)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhbk8"]
 atlas = ExtResource("1_nhbk8")
 region = Rect2(107, 59, 26, 26)
@@ -185,6 +237,12 @@ DayAndNightCounterPanel/styles/panel = SubResource("StyleBoxTexture_kwis4")
 DayAndNightLabel/base_type = &"Label"
 DayAndNightLabel/font_sizes/font_size = 18
 DayAndNightLabel/fonts/font = ExtResource("2_mtjyl")
+GameMenuButton/base_type = &"Button"
+GameMenuButton/styles/disabled = SubResource("StyleBoxTexture_2isuy")
+GameMenuButton/styles/focus = SubResource("StyleBoxTexture_ivv52")
+GameMenuButton/styles/hover = SubResource("StyleBoxTexture_iyedh")
+GameMenuButton/styles/normal = SubResource("StyleBoxTexture_mfc43")
+GameMenuButton/styles/pressed = SubResource("StyleBoxTexture_ba0tq")
 InventoryItemPanel/base_type = &"PanelContainer"
 InventoryItemPanel/styles/panel = SubResource("StyleBoxTexture_68i34")
 InventoryLabel/base_type = &"Label"
