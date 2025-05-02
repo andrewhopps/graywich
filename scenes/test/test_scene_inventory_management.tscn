@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://b61028yiybeqi"]
 
-[ext_resource type="TileSet" uid="uid://bui5t0akjbf5w" path="res://Tilesets/game_tile_set.tres" id="1_kxmxa"]
+[ext_resource type="TileSet" uid="uid://bui5t0akjbf5w" path="res://assets/Tilesets/game_tile_set.tres" id="1_kxmxa"]
 [ext_resource type="PackedScene" uid="uid://d36rwti00tix5" path="res://scenes/characters/player/player.tscn" id="2_gttdp"]
 [ext_resource type="PackedScene" uid="uid://dwhe01lebrpbb" path="res://scenes/objects/animal_byproducts/milk.tscn" id="3_gqv46"]
 [ext_resource type="PackedScene" uid="uid://ba1f2oul1v2b3" path="res://scenes/objects/plants/corn_harvest.tscn" id="4_7fi45"]

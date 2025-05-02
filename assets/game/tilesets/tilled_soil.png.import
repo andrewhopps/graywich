@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di10yeuums82e"
-path="res://.godot/imported/farmland_dirt_wide_wet.png-2e6004554f2530c9b68407449923e977.ctex"
+uid="uid://fmgqq1jv20kg"
+path="res://.godot/imported/tilled_soil.png-871af369a935b507c83abbdbe819b19a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/tilesets/farmland_dirt_wide_wet.png"
-dest_files=["res://.godot/imported/farmland_dirt_wide_wet.png-2e6004554f2530c9b68407449923e977.ctex"]
+source_file="res://assets/game/tilesets/tilled_soil.png"
+dest_files=["res://.godot/imported/tilled_soil.png-871af369a935b507c83abbdbe819b19a.ctex"]
 
 [params]
 

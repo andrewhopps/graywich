@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://5snhdo1egq2t"]
+[gd_scene load_steps=15 format=4 uid="uid://5snhdo1egq2t"]
 
 [ext_resource type="PackedScene" uid="uid://3ffvxnqp2mwu" path="res://scenes/components/test_scene_enable_tool_buttons_component.tscn" id="1_6lv37"]
 [ext_resource type="PackedScene" uid="uid://dlb05xvmchiw" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="PackedScene" uid="uid://d0j848catnoim" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="1_nk4dp"]
-[ext_resource type="TileSet" uid="uid://bui5t0akjbf5w" path="res://Tilesets/game_tile_set.tres" id="2_ff0kp"]
+[ext_resource type="TileSet" uid="uid://bui5t0akjbf5w" path="res://assets/Tilesets/game_tile_set.tres" id="2_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://d36rwti00tix5" path="res://scenes/characters/player/player.tscn" id="3_aolun"]
 [ext_resource type="PackedScene" uid="uid://bkyf151d10wpn" path="res://scenes/components/field_cursor_component.tscn" id="3_mapoa"]
 [ext_resource type="PackedScene" uid="uid://cx2pciacx8kh" path="res://scenes/ui/game_screen.tscn" id="4_bb1mf"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ctyvcy3axbmb" path="res://scenes/components/save_data_component.tscn" id="6_dxoer"]
 [ext_resource type="Resource" uid="uid://bdxfh4dklb1a7" path="res://resources/tilemap_layer_data_resource.tres" id="7_t4lsr"]
 [ext_resource type="PackedScene" uid="uid://c5s386qgbyd12" path="res://scenes/components/save_level_data_component.tscn" id="9_w2jyg"]
-[ext_resource type="Script" uid="uid://2ir2oei8k7r0" path="res://scenes/components/save_level_data_component.gd" id="10_nk4dp"]
 [ext_resource type="PackedScene" uid="uid://v3qign7cjx55" path="res://scenes/characters/guide/guide.tscn" id="14_t4lsr"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
@@ -24,7 +23,6 @@ y_sort_enabled = true
 [node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("1_nk4dp")]
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("9_w2jyg")]
-script = ExtResource("10_nk4dp")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_mapoa")]
 visible = false

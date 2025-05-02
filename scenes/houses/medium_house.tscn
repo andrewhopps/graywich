@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://cjbflash5vvty"]
 
-[ext_resource type="TileSet" uid="uid://12qnpff3galn" path="res://Tilesets/house_tile_set.tres" id="1_xnliw"]
+[ext_resource type="TileSet" uid="uid://12qnpff3galn" path="res://assets/Tilesets/house_tile_set.tres" id="1_xnliw"]
 
 [node name="MediumHouse" type="Node2D"]
 
