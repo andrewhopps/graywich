@@ -409,7 +409,7 @@ current_tool = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_kxlma")
-animation = &"idle_front"
+animation = &"idle_right"
 autoplay = "idle_front"
 offset = Vector2(0, -5)
 
