@@ -8,19 +8,20 @@ extends PanelContainer
 
 
 func _ready() -> void:
-	ToolManager.enable_tool.connect(on_enable_tool_button)
-	
-	tool_tilling.disabled = true
-	tool_tilling.focus_mode = Control.FOCUS_NONE
-	
-	tool_watering_can.disabled = true
-	tool_watering_can.focus_mode = Control.FOCUS_NONE
-	
-	tool_corn.disabled = true
-	tool_corn.focus_mode = Control.FOCUS_NONE
-	
-	tool_tomato.disabled = true
-	tool_tomato.focus_mode = Control.FOCUS_NONE
+	#ToolManager.enable_tool.connect(on_enable_tool_button)
+	#
+	#tool_tilling.disabled = true
+	#tool_tilling.focus_mode = Control.FOCUS_NONE
+	#
+	#tool_watering_can.disabled = true
+	#tool_watering_can.focus_mode = Control.FOCUS_NONE
+	#
+	#tool_corn.disabled = true
+	#tool_corn.focus_mode = Control.FOCUS_NONE
+	#
+	#tool_tomato.disabled = true
+	#tool_tomato.focus_mode = Control.FOCUS_NONE
+	pass
 
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
@@ -45,6 +46,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		tool_watering_can.release_focus()
 		tool_corn.release_focus()
 		tool_tomato.release_focus()
+		
+	if event.is_action_pressed("hotbar 1"):
+		ToolManager.select_tool(DataTypes.Tools.AxeWood)
+	if event.is_action_pressed("hotbar 2"):
+		ToolManager.select_tool(DataTypes.Tools.TillGround)
+	if event.is_action_pressed("hotbar 3"):
+		ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+	if event.is_action_pressed("hotbar 4"):
+		ToolManager.select_tool(DataTypes.Tools.PlantCorn)
+	if event.is_action_pressed("hotbar 5"):
+		ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 
 func on_enable_tool_button(tool: DataTypes.Tools) -> void:
 	if tool == DataTypes.Tools.TillGround:

@@ -414,7 +414,6 @@ autoplay = "idle_front"
 offset = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_t61fv")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
@@ -452,5 +451,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="HitComponent" parent="." instance=ExtResource("10_3xnwo")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_djydg")
 debug_color = Color(0.779062, 0.417017, 0.367723, 0.42)

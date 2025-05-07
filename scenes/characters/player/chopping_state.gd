@@ -22,6 +22,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+	
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("chopping_back")
 		hit_component_collision_shape.position = Vector2(0,-18)
