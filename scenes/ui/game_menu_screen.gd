@@ -2,7 +2,8 @@ extends CanvasLayer
 
 @onready var settings_game_button: Button = $MarginContainer/MarginContainer2/VBoxContainer/SettingsGameButton as Button
 @onready var save_game_button: Button = $MarginContainer/MarginContainer2/VBoxContainer/SaveGameButton
-var settings_menu_screen = preload("res://scenes/ui/settings_menu.tscn")
+@onready var options_menu: OptionsMenu = $Options_Menu as OptionsMenu
+@onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
 
 
 func _ready() -> void:
@@ -19,11 +20,17 @@ func _on_save_game_button_pressed() -> void:
 	SaveGameManager.save_game() # Replace with function body.
 
 func on_options_pressed() -> void:
-	print("LOAD OPTIONS MENU")
+	margin_container.visible = false
+	options_menu.set_process(true)
+	options_menu.visible = true
 
 func _on_exit_game_button_pressed() -> void:
 	GameManager.exit_game() # Replace with function body.
 
+func on_exit_options_menu() -> void:
+	margin_container.visible = true
+	options_menu.visible = false
 
 func handle_connecting_signals() -> void:
 	settings_game_button.button_down.connect(on_options_pressed)
+	options_menu.exit_options_menu.connect(on_exit_options_menu)
