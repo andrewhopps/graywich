@@ -47,15 +47,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		tool_corn.release_focus()
 		tool_tomato.release_focus()
 		
-	if event.is_action_pressed("hotbar 1"):
+	if event.is_action_pressed("hotbar1"):
 		ToolManager.select_tool(DataTypes.Tools.AxeWood)
-	if event.is_action_pressed("hotbar 2"):
+	if event.is_action_pressed("hotbar2"):
 		ToolManager.select_tool(DataTypes.Tools.TillGround)
-	if event.is_action_pressed("hotbar 3"):
+	if event.is_action_pressed("hotbar3"):
 		ToolManager.select_tool(DataTypes.Tools.WaterCrops)
-	if event.is_action_pressed("hotbar 4"):
+	if event.is_action_pressed("hotbar4"):
 		ToolManager.select_tool(DataTypes.Tools.PlantCorn)
-	if event.is_action_pressed("hotbar 5"):
+	if event.is_action_pressed("hotbar5"):
 		ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 
 func on_enable_tool_button(tool: DataTypes.Tools) -> void:
