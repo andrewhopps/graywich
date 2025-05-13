@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpw7cmnq3y0mr"]
+[gd_scene load_steps=6 format=3 uid="uid://bpw7cmnq3y0mr"]
 
 [ext_resource type="Theme" uid="uid://bpcud1jixkkkc" path="res://scenes/ui/game_ui_theme.tres" id="1_5slcd"]
 [ext_resource type="PackedScene" uid="uid://baffmlby5gbdp" path="res://scenes/ui/game_menu_screen_background.tscn" id="1_arotu"]
 [ext_resource type="Script" uid="uid://d1oa101mlghbl" path="res://scenes/ui/game_menu_screen.gd" id="1_l5nq4"]
 [ext_resource type="PackedScene" uid="uid://dabjosypfdc1h" path="res://scenes/components/mouse_cursor_component.tscn" id="2_vrg0q"]
 [ext_resource type="Texture2D" uid="uid://dsab26l1r1vty" path="res://assets/ui/mouse_icon.png" id="3_ecc0l"]
-[ext_resource type="PackedScene" uid="uid://dgeymyscgltw5" path="res://scenes/ui/optionsmenu/options_menu.tscn" id="6_ecc0l"]
 
 [node name="GameMenuScreen" type="CanvasLayer"]
 script = ExtResource("1_l5nq4")
@@ -77,9 +76,6 @@ custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "EXIT"
-
-[node name="Options_Menu" parent="." instance=ExtResource("6_ecc0l")]
-visible = false
 
 [connection signal="pressed" from="MarginContainer/MarginContainer2/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer2/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
