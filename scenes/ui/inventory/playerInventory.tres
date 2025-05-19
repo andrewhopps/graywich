@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=5 format=3 uid="uid://elr55n1yj0w8"]
+
+[ext_resource type="Script" uid="uid://dwa7vldyog2o4" path="res://inventory_item.gd" id="1_xa1px"]
+[ext_resource type="Resource" uid="uid://c206r1f6xiwlg" path="res://scenes/ui/inventory/items/egg.tres" id="2_jbcok"]
+[ext_resource type="Script" uid="uid://bhbyw84vo2yjt" path="res://scenes/ui/inventory/inventory.gd" id="2_uk4aq"]
+[ext_resource type="Resource" uid="uid://5t8l6fu2x0c2" path="res://scenes/ui/inventory/items/milk.tres" id="3_sscsu"]
+
+[resource]
+script = ExtResource("2_uk4aq")
+items = Array[ExtResource("1_xa1px")]([ExtResource("2_jbcok"), ExtResource("3_sscsu"), ExtResource("2_jbcok"), ExtResource("2_jbcok"), ExtResource("3_sscsu"), null, null, null, null, null, ExtResource("3_sscsu"), null, null])
+metadata/_custom_type_script = "uid://bhbyw84vo2yjt"

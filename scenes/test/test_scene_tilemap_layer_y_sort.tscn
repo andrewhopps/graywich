@@ -1,13 +1,39 @@
-[gd_scene load_steps=6 format=4 uid="uid://dntgeg645njgd"]
+[gd_scene load_steps=16 format=4 uid="uid://dntgeg645njgd"]
 
+[ext_resource type="Script" uid="uid://di3g12jp0ae7t" path="res://scenes/test/world.gd" id="1_calxf"]
 [ext_resource type="TileSet" uid="uid://bui5t0akjbf5w" path="res://assets/Tilesets/game_tile_set.tres" id="1_ctmx0"]
 [ext_resource type="PackedScene" uid="uid://ckq7ilx7ic1q6" path="res://scenes/objects/plants/tomato.tscn" id="2_5mdqj"]
 [ext_resource type="PackedScene" uid="uid://d36rwti00tix5" path="res://scenes/characters/player/player.tscn" id="2_ph1je"]
 [ext_resource type="PackedScene" uid="uid://cgcbxl7ihej1x" path="res://scenes/objects/plants/corn.tscn" id="3_vkqnv"]
+[ext_resource type="Script" uid="uid://cgxcfpqgt6sy0" path="res://scenes/ui/game_screen.gd" id="5_8sgwa"]
+[ext_resource type="PackedScene" uid="uid://cujdt1md5dap" path="res://scenes/ui/inventory_gui.tscn" id="5_s6y4m"]
 [ext_resource type="PackedScene" uid="uid://cx2pciacx8kh" path="res://scenes/ui/game_screen.tscn" id="5_vkqnv"]
+[ext_resource type="PackedScene" uid="uid://c8olnywfpwuqx" path="res://scenes/objects/trees/large_tree.tscn" id="6_64nhu"]
+[ext_resource type="Shader" uid="uid://chcnbn3h5o45l" path="res://scenes/objects/shake.gdshader" id="7_tq3fl"]
+[ext_resource type="PackedScene" uid="uid://dog8lnw3ihhrc" path="res://scenes/objects/trees/small_tree.tscn" id="8_kpo36"]
+[ext_resource type="PackedScene" uid="uid://dw7ybhqsqxf54" path="res://scenes/objects/trees/large_tree_fruit.tscn" id="9_s6y4m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpo36"]
+resource_local_to_scene = true
+shader = ExtResource("7_tq3fl")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sgwa"]
+resource_local_to_scene = true
+shader = ExtResource("7_tq3fl")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_calxf"]
+resource_local_to_scene = true
+shader = ExtResource("7_tq3fl")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [node name="TestSceneTilemapLayerYSort" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_calxf")
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -34,11 +60,6 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAIAAgABAAAAAAABgANAAwABAAAAAAABQARAAkABAAAAAAACQAMAAgABAAAAAAABQAGAAoABAAAAAAABgANAA8ABAAAAAAACQA=")
 tile_set = ExtResource("1_ctmx0")
 
-[node name="Player" parent="." instance=ExtResource("2_ph1je")]
-position = Vector2(149, 198)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
 [node name="Crops" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -55,3 +76,36 @@ position = Vector2(168, 148)
 position = Vector2(133, 159)
 
 [node name="GameScreen" parent="." instance=ExtResource("5_vkqnv")]
+process_mode = 3
+script = ExtResource("5_8sgwa")
+
+[node name="InventoryGui" parent="GameScreen" instance=ExtResource("5_s6y4m")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -46.5
+offset_right = 167.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="." instance=ExtResource("2_ph1je")]
+position = Vector2(359, 152)
+
+[node name="LargeTree" parent="." instance=ExtResource("6_64nhu")]
+material = SubResource("ShaderMaterial_kpo36")
+position = Vector2(430, 133)
+
+[node name="SmallTree" parent="." instance=ExtResource("8_kpo36")]
+material = SubResource("ShaderMaterial_8sgwa")
+position = Vector2(467, 180)
+
+[node name="LargeTreeFruit" parent="." instance=ExtResource("9_s6y4m")]
+material = SubResource("ShaderMaterial_calxf")
+position = Vector2(498, 107)
+
+[connection signal="closed" from="GameScreen/InventoryGui" to="." method="_on_inventory_gui_closed"]
+[connection signal="opened" from="GameScreen/InventoryGui" to="." method="_on_inventory_gui_opened"]

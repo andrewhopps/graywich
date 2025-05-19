@@ -1,0 +1,234 @@
+[gd_scene load_steps=7 format=3 uid="uid://rvbe24erqscw"]
+
+[ext_resource type="Theme" uid="uid://bpcud1jixkkkc" path="res://scenes/ui/game_ui_theme.tres" id="1_nv72c"]
+[ext_resource type="PackedScene" uid="uid://cvda76ma8v603" path="res://scenes/ui/optionsmenu/window_mode_button.tscn" id="2_62m86"]
+[ext_resource type="PackedScene" uid="uid://dm5l1vy36tpve" path="res://scenes/ui/optionsmenu/resolution_mode_button.tscn" id="3_yd04m"]
+[ext_resource type="PackedScene" uid="uid://cmbxtuaew0suh" path="res://scenes/ui/optionsmenu/hot_key_keybind_button.tscn" id="4_uwte4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwte4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0cp6"]
+
+[node name="OptionsTabContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nv72c")
+theme_type_variation = &"OptionsTab"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = -250.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"OptionsTab"
+tab_alignment = 1
+current_tab = 2
+
+[node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"OptionsTab"
+tab_alignment = 1
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="WindowModeButton" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_62m86")]
+layout_mode = 2
+
+[node name="ResolutionModeButton" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_yd04m")]
+layout_mode = 2
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Label2" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Label3" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 65
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uwte4")
+
+[node name="Interact" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="WalkUp" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+
+[node name="WalkDown" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "walk_down"
+
+[node name="WalkLeft" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "walk_left"
+
+[node name="WalkRight" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "walk_right"
+
+[node name="Hotbar1" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar1"
+
+[node name="Hotbar2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar2"
+
+[node name="Hotbar3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar3"
+
+[node name="Hotbar4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar4"
+
+[node name="Hotbar5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar5"
+
+[node name="Hotbar6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar6"
+
+[node name="Hotbar7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar7"
+
+[node name="Hotbar8" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar8"
+
+[node name="Hotbar9" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar9"
+
+[node name="Hotbar10" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar10"
+
+[node name="Hotbar11" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar11"
+
+[node name="Hotbar12" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwte4")]
+layout_mode = 2
+action_name = "hotbar12"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h0cp6")
+
+[node name="Accessibility" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Zoom Level"
+
+[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Always Show Tool Hit Location"
+
+[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hide Tool Hit Location When Moving"
+
+[node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Language"
+
+[node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "IDK Yet"
