@@ -23,6 +23,7 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 
 func _physics_process(delta: float) -> void:
 	move()
+	handleCollision()
 
 func move():
 	input_movement = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
@@ -53,3 +54,14 @@ func update_tool_anim():
 		#$AnimationPlayer.play("PlayerAnimations/chopping_down")
 	#if player_direction.y < 0:
 		#$AnimationPlayer.play("PlayerAnimations/chopping_up")
+
+func handleCollision():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		print_debug(collider.name)
+
+func _on_hurt_box_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
+		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://d36rwti00tix5"]
+[gd_scene load_steps=60 format=3 uid="uid://d36rwti00tix5"]
 
 [ext_resource type="Script" uid="uid://bv3gtopseslx" path="res://scenes/characters/player/player.gd" id="1_6avc5"]
 [ext_resource type="Texture2D" uid="uid://dql84x4myhrst" path="res://assets/game/characters/all_character_sprites.png" id="2_686vu"]
@@ -860,6 +860,10 @@ _data = {
 &"watering_up": SubResource("Animation_rlcpy")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hss88"]
+radius = 6.0
+height = 16.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -870,9 +874,9 @@ inventory = ExtResource("2_hss88")
 texture = ExtResource("2_686vu")
 hframes = 4
 vframes = 10
-frame = 13
+frame = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D_Player" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_686vu")
 
 [node name="HitComponent" parent="." instance=ExtResource("10_3xnwo")]
@@ -899,3 +903,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_hss88"),
 &"PlayerAnimations": SubResource("AnimationLibrary_aqbjf")
 }
+
+[node name="hurtBox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D_hurtBox" type="CollisionShape2D" parent="hurtBox"]
+shape = SubResource("CapsuleShape2D_hss88")
+debug_color = Color(0.863542, 0.335046, 0.341092, 0.42)
+
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]

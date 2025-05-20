@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djw5i4m48hj7c" path="res://scenes/components/feed_component.tscn" id="5_ayji6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umtkn"]
-size = Vector2(14, 12)
+size = Vector2(14, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ayji6"]
 atlas = ExtResource("1_8pawo")
@@ -113,7 +113,7 @@ radius = 24.0
 script = ExtResource("1_umtkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_umtkn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

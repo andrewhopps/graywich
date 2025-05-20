@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6bmcvv32le5q"]
+[gd_scene load_steps=5 format=3 uid="uid://6bmcvv32le5q"]
 
 [ext_resource type="Texture2D" uid="uid://c4l8vpg4wis7o" path="res://assets/ui/basic_ui_sprites.png" id="1_g151s"]
 [ext_resource type="Script" uid="uid://dcu6s3ec5k3kg" path="res://scenes/ui/slot_gui.gd" id="1_t0lno"]
+[ext_resource type="FontFile" uid="uid://b8wxbjkq4cx5v" path="res://assets/ui/fonts/pixel_sproutlands.ttf" id="3_ht0s1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0lno"]
 atlas = ExtResource("1_g151s")
@@ -28,3 +29,16 @@ offset_bottom = 26.0
 layout_mode = 2
 
 [node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(10, 8)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 11.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ht0s1")
+theme_override_font_sizes/font_size = 9
+horizontal_alignment = 2

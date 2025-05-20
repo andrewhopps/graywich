@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://qmo0errgnb83"]
+
+[ext_resource type="PackedScene" uid="uid://bd5ic5licpu0x" path="res://scenes/components/collectable_component.tscn" id="1_5j5du"]
+[ext_resource type="Texture2D" uid="uid://chwcj2npftc6x" path="res://assets/game/characters/tools.png" id="2_pftsd"]
+[ext_resource type="Script" uid="uid://k0xd4i8spt6c" path="res://scenes/objects/tools/axe.gd" id="2_v1qcc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1qcc"]
+resource_local_to_scene = true
+size = Vector2(10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3gb3"]
+atlas = ExtResource("2_pftsd")
+region = Rect2(18, 35, 9, 8)
+
+[node name="Axe" instance=ExtResource("1_5j5du")]
+script = ExtResource("2_v1qcc")
+
+[node name="CollisionShape2D_CollectableComponent" parent="." index="0"]
+shape = SubResource("RectangleShape2D_v1qcc")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = SubResource("AtlasTexture_s3gb3")

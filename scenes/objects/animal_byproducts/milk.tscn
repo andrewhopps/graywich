@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwhe01lebrpbb"]
+[gd_scene load_steps=5 format=3 uid="uid://dwhe01lebrpbb"]
 
 [ext_resource type="Texture2D" uid="uid://67j0mlcsbh84" path="res://assets/game/objects/simple_milk_and_grass_item.png" id="1_h1788"]
 [ext_resource type="PackedScene" uid="uid://bd5ic5licpu0x" path="res://scenes/components/collectable_component.tscn" id="2_8f0fc"]
+[ext_resource type="Resource" uid="uid://5t8l6fu2x0c2" path="res://scenes/ui/inventory/items/milk.tres" id="3_cyn3d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o2iuq"]
 radius = 5.0
@@ -14,8 +15,9 @@ frame = 2
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_8f0fc")]
 collectable_name = "milk"
+itemRes = ExtResource("3_cyn3d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollectableComponent"]
 y_sort_enabled = true
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_o2iuq")

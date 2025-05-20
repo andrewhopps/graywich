@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccqs7adtrc8bv"]
+[gd_scene load_steps=5 format=3 uid="uid://ccqs7adtrc8bv"]
 
 [ext_resource type="Texture2D" uid="uid://7jqfx7lmadeb" path="res://assets/game/objects/egg_item.png" id="1_h452w"]
 [ext_resource type="PackedScene" uid="uid://bd5ic5licpu0x" path="res://scenes/components/collectable_component.tscn" id="2_twloa"]
+[ext_resource type="Resource" uid="uid://5t8l6fu2x0c2" path="res://scenes/ui/inventory/items/milk.tres" id="3_eqb3i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h452w"]
 radius = 7.0
@@ -12,6 +13,7 @@ texture = ExtResource("1_h452w")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_twloa")]
 collectable_name = "egg"
+itemRes = ExtResource("3_eqb3i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+[node name="CollisionShapeEgg" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_h452w")

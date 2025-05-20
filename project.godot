@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="graywich"
-run/main_scene="uid://cl782lp6c3p31"
+run/main_scene="uid://bpw7cmnq3y0mr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,15 @@ SaveGameManager="*res://scripts/globals/save_game_manager.gd"
 SceneManager="*res://scripts/globals/scene_manager.gd"
 ToolManager="*res://scripts/globals/tool_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
+window/size/borderless=true
+window/size/transparent=true
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -156,3 +165,7 @@ open_inventory={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/guide.dialogue")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
