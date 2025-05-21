@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c206r1f6xiwlg"]
 
-[ext_resource type="Script" uid="uid://dwa7vldyog2o4" path="res://inventory_item.gd" id="1_cb5r6"]
+[ext_resource type="Script" uid="uid://dwa7vldyog2o4" path="res://scenes/ui/inventory/inventory_item.gd" id="1_cb5r6"]
 [ext_resource type="Texture2D" uid="uid://7jqfx7lmadeb" path="res://assets/game/objects/egg_item.png" id="2_jm51m"]
 
 [resource]
